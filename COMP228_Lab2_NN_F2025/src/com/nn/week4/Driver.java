@@ -26,6 +26,7 @@ public class Driver {
 				investments[i] = new Interest(principal, rate, time);
 			} catch  (IllegalArgumentException e){
 				System.out.println("Invalid input: " + e.getMessage());
+				i--;
 			}
 		}
 	}
