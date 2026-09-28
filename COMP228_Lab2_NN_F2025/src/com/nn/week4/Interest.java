@@ -12,7 +12,7 @@ public class Interest {
 	
 	public Interest(BigDecimal principal, BigDecimal rate, int time) {
 		if (principal.compareTo(BigDecimal.ZERO) <= 0) {
-			throw new Exception("Principal must be greater than zero.");
+			throw new IllegalArgumentException("Principal must be greater than zero.");
 		}
 		
 		this.principal = principal;

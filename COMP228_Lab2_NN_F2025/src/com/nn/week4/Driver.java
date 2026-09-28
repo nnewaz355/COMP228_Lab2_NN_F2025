@@ -21,11 +21,12 @@ public class Driver {
 			
 			System.out.print("Enter time (years): ");
 			BigDecimal time = scanner.nextBigDecimal();
-		}
-		try {
-			investments[i] = new Interest(principal, rate, time);
-		} catch  (IllegalArgumentException e){
-			System.out.println("Invalid input: " + e.getMessage());
+			
+			try {
+				investments[i] = new Interest(principal, rate, time);
+			} catch  (IllegalArgumentException e){
+				System.out.println("Invalid input: " + e.getMessage());
+			}
 		}
 	}
 }
