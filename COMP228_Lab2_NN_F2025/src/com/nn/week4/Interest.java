@@ -20,11 +20,11 @@ public class Interest {
 		this.time = time;
 	}
 	
-	public BigDecimal calculateSimplateInterest(BigDecimal p, BigDecimal r, int time) {
-		
+	public BigDecimal calculateSimpleInterest(BigDecimal p, BigDecimal r, int time) {
+		return p.multiply(r).multiply(BigDecimal.valueOf(time)).divide(BigDecimal.valueOf(100));
 	}
 	
-	public BigDecimal calculateSimplateInterest(BigDecimal p, BigDecimal r, int time) {
-		
+	public BigDecimal calculateSimpleInterest(double p, double r, int time) {
+		return BigDecimal.valueOf(p*r*time/100.0);
 	}
 }
