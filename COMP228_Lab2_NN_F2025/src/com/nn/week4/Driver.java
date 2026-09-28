@@ -20,7 +20,7 @@ public class Driver {
 			BigDecimal rate = scanner.nextBigDecimal();
 			
 			System.out.print("Enter time (years): ");
-			BigDecimal time = scanner.nextBigDecimal();
+			int time = scanner.nextInt();
 			
 			try {
 				investments[i] = new Interest(principal, rate, time);
