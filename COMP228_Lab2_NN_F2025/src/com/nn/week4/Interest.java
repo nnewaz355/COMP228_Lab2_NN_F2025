@@ -7,7 +7,7 @@ public class Interest {
 	private int time;
 	
 	//SI = P*R*T/100
-	//CI = P*(1+r/100)^(t)-P
+	//CI = P * (1 + r/100)^t - P
 	
 	//Constructor
 	
@@ -73,5 +73,21 @@ public class Interest {
 		return p*r*time/100.0;
 	}
 	
+	public BigDecimal calculateCompoundInterest(BigDecimal p, BigDecimal r, int time) {
+		/***************************************************************************************
+		 SHOWING WORK FOR COMPOUND INTEREST FORMULA SINCE BIGDECIMAL FORMULA MAY BE COMPLICATED
+		***************************************************************************************/
+		// r.divide(BigDecimal.valueOf(100)) -> r/100
+		// BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))) -> 1 + r/100
+		// BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time) -> (1 + r/100)^t
+		// p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)) -> P * (1 + r/100)^t
+		// p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)).subtract(p) -> P * (1 + r/100)^t - P
+		
+		return p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)).subtract(p);
+	}
+	
+	public double calculateCompoundInterest(double p, double r, int time) {
+		return p * Math.pow((1.0 + r/100.0), time*1.0) - p;
+	}
 	
 }
