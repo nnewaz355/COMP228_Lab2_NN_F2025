@@ -66,7 +66,7 @@ public class Interest {
 
 
 	public BigDecimal calculateSimpleInterest(BigDecimal p, BigDecimal r, int time) {
-		return p.multiply(r).multiply(BigDecimal.valueOf(time)).divide(BigDecimal.valueOf(100));
+		return p.multiply(r).multiply(BigDecimal.valueOf(time)).divide(BigDecimal.valueOf(100)).setScale(2, RoundingMode.HALF_UP);
 	}
 	
 	public double calculateSimpleInterest(double p, double r, int time) {
@@ -83,11 +83,15 @@ public class Interest {
 		// p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)) -> P * (1 + r/100)^t
 		// p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)).subtract(p) -> P * (1 + r/100)^t - P
 		
-		return p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)).subtract(p);
+		return p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100))).pow(time)).subtract(p).setScale(2, RoundingMode.HALF_UP);
 	}
 	
 	public double calculateCompoundInterest(double p, double r, int time) {
 		return p * Math.pow((1.0 + r/100.0), time*1.0) - p;
+	}
+	
+	public String toString() {
+		return String.format("");
 	}
 	
 }
