@@ -42,6 +42,13 @@ public class Driver {
 				i--;
 			} 
 		}
+		System.out.println();
+		
+		// Display 5 investments
+		for (int i=0; i < investments.length; i++) {
+			System.out.printf("Investment #%d%n", i+1);
+			System.out.println(investments[i]);
+		}
 		
 		scanner.close();
 	}

@@ -91,7 +91,7 @@ public class Interest {
 	}
 	
 	public String toString() {
-		return String.format("Principal: $%.2f%nRate: %.1f%%%nTime: %d year(s)%nSimple Interest: $%.2f%nCompound Interest: $%.2f", this.principal, this.rate, this.time, this.calculateSimpleInterest(this.principal, this.rate, this.time), this.calculateCompoundInterest(this.principal, this.rate, this.time));
+		return String.format("Principal: $%.2f%nRate: %.1f%%%nTime: %d year(s)%nSimple Interest: $%.2f%nCompound Interest: $%.2f%n", this.principal, this.rate, this.time, this.calculateSimpleInterest(this.principal, this.rate, this.time), this.calculateCompoundInterest(this.principal, this.rate, this.time));
 	}
 	
 }
