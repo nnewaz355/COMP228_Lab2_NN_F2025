@@ -7,7 +7,7 @@ public class Interest {
 	private int time;
 	
 	//SI = P*R*T/100
-	//CI = P*(1+r/n)**(t/n)
+	//CI = P*(1+r/100)^(t)-P
 	
 	//Constructor
 	
@@ -27,6 +27,44 @@ public class Interest {
 		this.time = time;
 	}
 	
+	
+	
+	public BigDecimal getPrincipal() {
+		return principal;
+	}
+
+
+
+	public void setPrincipal(BigDecimal principal) {
+		this.principal = principal;
+	}
+
+
+
+	public BigDecimal getRate() {
+		return rate;
+	}
+
+
+
+	public void setRate(BigDecimal rate) {
+		this.rate = rate;
+	}
+
+
+
+	public int getTime() {
+		return time;
+	}
+
+
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+
+
 	public BigDecimal calculateSimpleInterest(BigDecimal p, BigDecimal r, int time) {
 		return p.multiply(r).multiply(BigDecimal.valueOf(time)).divide(BigDecimal.valueOf(100));
 	}
